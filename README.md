@@ -1,4 +1,11 @@
 # AI Resume Analyzer 🚀
+# 🤖 AI Resume Analyzer
+
+![GitHub stars](https://img.shields.io/github/stars/anushka-malkar/AI-Resume-Analyzer)
+![GitHub forks](https://img.shields.io/github/forks/anushka-malkar/AI-Resume-Analyzer)
+![GitHub license](https://img.shields.io/github/license/anushka-malkar/AI-Resume-Analyzer)
+
+## 📌 About The Project
 
 An AI-powered Resume Analyzer that analyzes resumes and provides ATS score, skills analysis, strengths, weaknesses and improvement suggestions using Artificial Intelligence.
 
@@ -14,6 +21,11 @@ An AI-powered Resume Analyzer that analyzes resumes and provides ATS score, skil
 - User Authentication
 - Resume History
 - Download Report
+
+## 🌐 Live Demo
+
+
+Coming Soon 🚀
 
 ## Tech Stack
 
@@ -479,6 +491,30 @@ The system analyzes:
 
 - View AI-generated feedback
 - Improve resume based on suggestions
+
+# 🤝 Contributing
+
+
+Contributions are welcome.
+
+1. Fork the repository
+2. Create your feature branch
+
+```bash
+git checkout -b feature/NewFeature
+
+
+---
+
+# Part 6: Add License
+
+At the end:
+
+```md
+# 📄 License
+
+
+This project is licensed under the MIT License.
 
 ## Author
 
