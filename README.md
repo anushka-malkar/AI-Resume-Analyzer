@@ -327,7 +327,109 @@ resume : resume.pdf
   "message": "Resume analyzed successfully"
 }
 ```
+# ⚙️ Installation Guide
+## 1. Clone Repository
 
+
+```bash
+git clone https://github.com/anushka-malkar/AI-Resume-Analyzer.git
+```
+
+Example:
+
+```bash
+git clone https://github.com/yourusername/AI-Resume-Analyzer.git
+```
+## 2. Open Project Folder
+
+
+```bash
+cd AI-Resume-Analyzer
+```
+# 🔙 Backend Setup
+
+
+## Navigate to server folder
+
+```bash
+cd server
+```
+
+
+## Install dependencies
+
+```bash
+npm install
+```
+## Create .env file
+
+
+Inside the server folder create:
+
+```
+.env
+```
+
+
+Add the following:
+
+
+```env
+PORT=5000
+
+SUPABASE_URL=your_supabase_url
+
+SUPABASE_KEY=your_supabase_key
+
+JWT_SECRET=your_jwt_secret
+
+GEMINI_API_KEY=your_gemini_api_key
+```
+## Start Backend Server
+
+
+```bash
+npm run dev
+```
+
+
+Backend will run on:
+
+```
+http://localhost:5000
+```
+# 🎨 Frontend Setup
+
+
+Open a new terminal:
+
+
+Navigate to client folder:
+
+```bash
+cd client
+```
+
+
+Install packages:
+
+```bash
+npm install
+```
+
+
+Start React application:
+
+```bash
+npm run dev
+```
+
+
+Frontend will run on:
+
+```
+http://localhost:5173
+```
 ## Author
 
 Anushka Malkar
