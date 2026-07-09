@@ -124,19 +124,20 @@ GEMINI_API_KEY=
 - Resume Matching
 - LinkedIn Profile Analyzer
 - Cloud Deployment
-📸 Screenshots
 
-🔐 Login Page
-(image)
+## 📸 Screenshots
 
-📝 Register Page
-(image)
+### 🔐 Login Page
+![Login Page](screenshots/login.png)
 
-📊 Dashboard
-(image)
+### 📝 Register Page
+![Register Page](screenshots/register.png)
 
-📄 Resume Analyzer
-(image)
+### 📊 Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### 📄 Resume Analyzer
+![Resume Analyzer](screenshots/analyzer.png)
 
 ## Author
 
