@@ -139,6 +139,40 @@ GEMINI_API_KEY=
 ### 📄 Resume Analyzer
 ![Resume Analyzer](screenshots/analyzer.png)
 
+# 🏗️ System Architecture
+
+![Architecture](screenshots/architecture.png)
+
+# 📂 Project Structure
+
+
+```text
+AI-Resume-Analyzer
+│
+├── client
+│   ├── src
+│   │   ├── components
+│   │   ├── pages
+│   │   ├── services
+│   │   └── App.jsx
+│   │
+│   └── package.json
+│
+├── server
+│   ├── config
+│   ├── controllers
+│   ├── middleware
+│   ├── routes
+│   ├── uploads
+│   ├── server.js
+│   └── package.json
+│
+├── screenshots
+│
+├── README.md
+└── .gitignore
+```
+
 ## Author
 
 Anushka Malkar
