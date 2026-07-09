@@ -429,7 +429,57 @@ Frontend will run on:
 
 ```
 http://localhost:5173
+
 ```
+# 🎬 Demo Instructions
+## Application Workflow
+
+
+### 1. Register Account
+
+- Open the application
+- Click on Register
+- Enter your name, email, and password
+- Create your account
+
+
+### 2. Login
+
+- Enter registered email and password
+- Click Login
+- User will be redirected to Dashboard
+
+
+### 3. Dashboard
+
+- View application overview
+- Access resume analysis features
+
+
+### 4. Upload Resume
+
+- Navigate to Resume Analyzer
+- Upload your resume PDF file
+- Click on Analyze Resume
+
+
+### 5. AI Resume Analysis
+
+The system analyzes:
+
+- Resume skills
+- Experience
+- Education
+- Strengths
+- Weaknesses
+- Improvement suggestions
+
+
+### 6. View Results
+
+- View AI-generated feedback
+- Improve resume based on suggestions
+
 ## Author
 
 Anushka Malkar
