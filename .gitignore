@@ -1,12 +1,33 @@
+# ==========================
+# Dependencies
+# ==========================
 node_modules/
+
+# ==========================
+# Environment Variables
+# ==========================
 .env
-server/.env
-client/.env
+.env.local
+.env.*.local
 
-server/uploads/
-
-client/node_modules/
-server/node_modules/
-
+# ==========================
+# Build Files
+# ==========================
 dist/
 build/
+
+# ==========================
+# Uploads (User Resume Files)
+# ==========================
+server/uploads/
+
+# ==========================
+# Logs
+# ==========================
+*.log
+
+# ==========================
+# OS Generated Files
+# ==========================
+.DS_Store
+Thumbs.db
