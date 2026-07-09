@@ -1,5 +1,4 @@
-# AI Resume Analyzer 🚀
-# 🤖 AI Resume Analyzer
+# 🤖 AI Resume Analyzer 🚀
 
 ![GitHub stars](https://img.shields.io/github/stars/anushka-malkar/AI-Resume-Analyzer)
 ![GitHub forks](https://img.shields.io/github/forks/anushka-malkar/AI-Resume-Analyzer)
