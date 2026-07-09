@@ -141,7 +141,7 @@ GEMINI_API_KEY=
 
 # 🏗️ System Architecture
 
-![Architecture](screenshots/architecture.png)
+![Architecture Diagram](screenshots/architecture.png)
 
 # 📂 Project Structure
 
