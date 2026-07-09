@@ -145,7 +145,6 @@ GEMINI_API_KEY=
 
 # 📂 Project Structure
 
-
 ```text
 AI-Resume-Analyzer
 │
@@ -156,18 +155,35 @@ AI-Resume-Analyzer
 │   │   ├── services
 │   │   └── App.jsx
 │   │
-│   └── package.json
+│   ├── package.json
+│   └── vite.config.js
 │
 ├── server
 │   ├── config
+│   │   └── supabase.js
+│   │
 │   ├── controllers
+│   │   ├── authController.js
+│   │   └── resumeController.js
+│   │
 │   ├── middleware
+│   │   └── authMiddleware.js
+│   │
 │   ├── routes
+│   │   ├── authRoutes.js
+│   │   └── resumeRoutes.js
+│   │
 │   ├── uploads
+│   │
 │   ├── server.js
 │   └── package.json
 │
 ├── screenshots
+│   ├── login.png
+│   ├── register.png
+│   ├── dashboard.png
+│   ├── analyzer.png
+│   └── architecture.png
 │
 ├── README.md
 └── .gitignore
