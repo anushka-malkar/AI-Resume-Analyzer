@@ -510,10 +510,12 @@ git checkout -b feature/NewFeature
 At the end:
 
 ```md
+
 # 📄 License
 
+Distributed under the MIT License.
 
-This project is licensed under the MIT License.
+See `LICENSE` file for more information.
 
 ## Author
 
