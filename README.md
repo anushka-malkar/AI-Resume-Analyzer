@@ -2,7 +2,7 @@
 
 ![GitHub stars](https://img.shields.io/github/stars/anushka-malkar/AI-Resume-Analyzer)
 ![GitHub forks](https://img.shields.io/github/forks/anushka-malkar/AI-Resume-Analyzer)
-![GitHub license](https://img.shields.io/github/license/anushka-malkar/AI-Resume-Analyzer)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## 📌 About The Project
 
