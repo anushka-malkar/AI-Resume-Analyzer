@@ -189,6 +189,145 @@ AI-Resume-Analyzer
 └── .gitignore
 ```
 
+## 🔐 Authentication APIs
+
+
+### 1. Register User
+
+**Method:**
+
+```
+POST
+```
+
+**Endpoint:**
+
+```
+/api/auth/register
+```
+
+**Description:**
+
+Creates a new user account in the application.
+
+
+**Request Body:**
+
+```json
+{
+  "name": "John",
+  "email": "john@gmail.com",
+  "password": "123456"
+}
+```
+
+
+**Response:**
+
+```json
+{
+  "success": true,
+  "message": "User registered successfully"
+}
+```
+
+---
+
+### 2. Login User
+
+**Method:**
+
+```
+POST
+```
+
+**Endpoint:**
+
+```
+/api/auth/login
+```
+
+**Description:**
+
+Authenticates the user and generates JWT token.
+
+
+**Request Body:**
+
+```json
+{
+  "email": "john@gmail.com",
+  "password": "123456"
+}
+```
+
+
+**Response:**
+
+```json
+{
+  "success": true,
+  "token": "JWT_TOKEN"
+}
+```
+
+---
+
+## 📄 Resume APIs
+
+
+### Upload Resume
+
+
+**Method:**
+
+```
+POST
+```
+
+
+**Endpoint:**
+
+```
+/api/resume/upload
+```
+
+
+**Description:**
+
+Uploads a resume PDF and analyzes resume content using AI.
+
+
+**Authorization:**
+
+```
+Bearer JWT Token
+```
+
+
+**Request Type:**
+
+```
+multipart/form-data
+```
+
+
+**Form Data:**
+
+```
+resume : resume.pdf
+```
+
+
+**Response:**
+
+```json
+{
+  "success": true,
+  "message": "Resume analyzed successfully"
+}
+```
+
 ## Author
 
 Anushka Malkar
