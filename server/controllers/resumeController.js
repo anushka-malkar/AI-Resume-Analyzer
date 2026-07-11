@@ -15,6 +15,8 @@ const uploadResume = async (req, res) => {
         message: "Please upload a PDF resume",
       });
     }
+    console.log("Uploaded File:", req.file);
+console.log("File Path:", req.file.path);
 
     const pdfBuffer = fs.readFileSync(req.file.path);
 
