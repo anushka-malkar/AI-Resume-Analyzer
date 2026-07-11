@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import API from "../services/api";
 import Navbar from "../components/Navbar";
 import { toast } from "react-toastify";
+import Footer from "../components/Footer";
 
 export default function History() {
   const navigate = useNavigate();
@@ -236,6 +237,7 @@ export default function History() {
           ))
         )}
       </div>
+      <Footer />
     </>
   );
 }

@@ -13,6 +13,7 @@ import WeaknessCard from "../components/WeaknessCard";
 import SuggestionCard from "../components/SuggestionCard";
 import StatsCards from "../components/StatsCards";
 import ATSChart from "../components/ATSChart";
+import Footer from "../components/Footer";
 
 import downloadReport from "../utils/downloadReport";
 
@@ -191,6 +192,7 @@ const fetchHistory = async () => {
         )}
 
       </div>
-    </>
+    <Footer />
+</>
   );
 }

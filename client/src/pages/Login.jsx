@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
+import { FaUserCircle, FaEye, FaEyeSlash } from "react-icons/fa";
 import API from "../services/api";
 import { toast } from "react-toastify";
 
@@ -8,6 +8,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const [formData, setFormData] = useState({
     email: "",
@@ -32,12 +33,13 @@ export default function Login() {
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
-     toast.success("Login Successful 🎉");
+      toast.success("Login Successful 🎉");
 
       navigate("/dashboard");
-
     } catch (err) {
-      alert(err.response?.data?.message || "Login Failed");
+      toast.error(
+        err.response?.data?.message || "Login Failed"
+      );
     } finally {
       setLoading(false);
     }
@@ -46,85 +48,123 @@ export default function Login() {
   return (
     <div style={container}>
       <div style={card}>
+        <div style={{ textAlign: "center", marginBottom: "20px" }}>
+          <FaUserCircle size={75} color="#2563eb" />
 
-        <div style={{ textAlign: "center" }}>
-          <FaUserCircle size={70} color="#2563eb" />
+          <h1 style={{ marginTop: "10px" }}>
+            AI Resume Analyzer
+          </h1>
 
-          <h2>AI Resume Analyzer</h2>
-
-          <p>Login to your account</p>
+          <p style={{ color: "#666" }}>
+            Login to continue
+          </p>
         </div>
 
         <form onSubmit={loginUser}>
-
           <input
             style={input}
             type="email"
             name="email"
-            placeholder="Email"
+            placeholder="Enter Email"
+            value={formData.email}
             onChange={handleChange}
             required
           />
 
-          <input
-            style={input}
-            type="password"
-            name="password"
-            placeholder="Password"
-            onChange={handleChange}
-            required
-          />
+          <div style={{ position: "relative" }}>
+            <input
+              style={input}
+              type={showPassword ? "text" : "password"}
+              name="password"
+              placeholder="Enter Password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
 
-          <button style={button}>
+            <span
+              onClick={() => setShowPassword(!showPassword)}
+              style={eye}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
+          </div>
+
+          <button
+            style={button}
+            disabled={loading}
+          >
             {loading ? "Logging In..." : "Login"}
           </button>
-
         </form>
 
-        <p style={{ textAlign: "center", marginTop: "20px" }}>
+        <p
+          style={{
+            textAlign: "center",
+            marginTop: "25px",
+          }}
+        >
           Don't have an account?{" "}
-          <Link to="/register">Register</Link>
+          <Link
+            to="/register"
+            style={{
+              color: "#2563eb",
+              fontWeight: "bold",
+            }}
+          >
+            Register
+          </Link>
         </p>
-
       </div>
     </div>
   );
 }
 
 const container = {
-  height: "100vh",
+  minHeight: "100vh",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  background: "#f5f7fb",
+  background: "linear-gradient(135deg,#eff6ff,#dbeafe)",
+  padding: "20px",
 };
 
 const card = {
-  width: "420px",
-  background: "white",
+  width: "100%",
+  maxWidth: "430px",
+  background: "#fff",
   padding: "35px",
-  borderRadius: "12px",
-  boxShadow: "0 0 15px rgba(0,0,0,0.15)",
+  borderRadius: "18px",
+  boxShadow: "0 10px 30px rgba(0,0,0,0.12)",
 };
 
 const input = {
   width: "100%",
-  padding: "12px",
-  marginTop: "15px",
-  borderRadius: "8px",
+  padding: "14px",
+  marginTop: "18px",
+  borderRadius: "10px",
   border: "1px solid #ccc",
   fontSize: "16px",
   boxSizing: "border-box",
 };
 
+const eye = {
+  position: "absolute",
+  right: "15px",
+  top: "33px",
+  cursor: "pointer",
+  color: "#555",
+};
+
 const button = {
   width: "100%",
-  padding: "12px",
-  marginTop: "20px",
+  padding: "14px",
+  marginTop: "25px",
   background: "#2563eb",
-  color: "white",
+  color: "#fff",
   border: "none",
-  borderRadius: "8px",
+  borderRadius: "10px",
   cursor: "pointer",
-  fontSize: "16px",
+  fontSize: "17px",
+  fontWeight: "bold",
 };

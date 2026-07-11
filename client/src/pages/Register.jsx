@@ -1,19 +1,25 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import {
+  FaUserPlus,
+  FaEye,
+  FaEyeSlash,
+} from "react-icons/fa";
 import API from "../services/api";
-import { FaUserPlus } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 export default function Register() {
   const navigate = useNavigate();
+
+  const [loading, setLoading] = useState(false);
+
+  const [showPassword, setShowPassword] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
   });
-
-  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -30,21 +36,13 @@ export default function Register() {
 
       const res = await API.post("/auth/register", formData);
 
-      // Success Toast
-      toast.success(res.data.message || "Registration Successful 🎉");
+      toast.success(res.data.message);
 
-      // Wait 1.5 seconds before navigating
-      setTimeout(() => {
-        navigate("/");
-      }, 1500);
-
+      navigate("/");
     } catch (err) {
-
-      // Error Toast
       toast.error(
         err.response?.data?.message || "Registration Failed"
       );
-
     } finally {
       setLoading(false);
     }
@@ -53,20 +51,37 @@ export default function Register() {
   return (
     <div style={container}>
       <div style={card}>
+        <div
+          style={{
+            textAlign: "center",
+            marginBottom: "20px",
+          }}
+        >
+          <FaUserPlus
+            size={75}
+            color="#2563eb"
+          />
 
-        <div style={{ textAlign: "center" }}>
-          <FaUserPlus size={70} color="#2563eb" />
-          <h2>Create Account</h2>
-          <p>Register to AI Resume Analyzer</p>
+          <h1
+            style={{
+              marginTop: "10px",
+            }}
+          >
+            Create Account
+          </h1>
+
+          <p style={{ color: "#666" }}>
+            Register to AI Resume Analyzer
+          </p>
         </div>
 
         <form onSubmit={registerUser}>
-
           <input
             style={input}
             type="text"
             name="name"
             placeholder="Full Name"
+            value={formData.name}
             onChange={handleChange}
             required
           />
@@ -75,77 +90,117 @@ export default function Register() {
             style={input}
             type="email"
             name="email"
-            placeholder="Email"
+            placeholder="Email Address"
+            value={formData.email}
             onChange={handleChange}
             required
           />
 
-          <input
-            style={input}
-            type="password"
-            name="password"
-            placeholder="Password"
-            onChange={handleChange}
-            required
-          />
+          <div style={{ position: "relative" }}>
+            <input
+              style={input}
+              type={
+                showPassword ? "text" : "password"
+              }
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+
+            <span
+              style={eye}
+              onClick={() =>
+                setShowPassword(!showPassword)
+              }
+            >
+              {showPassword ? (
+                <FaEyeSlash />
+              ) : (
+                <FaEye />
+              )}
+            </span>
+          </div>
 
           <button
-            style={{
-              ...button,
-              opacity: loading ? 0.7 : 1,
-            }}
+            style={button}
             disabled={loading}
           >
-            {loading ? "Creating Account..." : "Register"}
+            {loading
+              ? "Creating Account..."
+              : "Register"}
           </button>
-
         </form>
 
-        <p style={{ textAlign: "center", marginTop: "20px" }}>
+        <p
+          style={{
+            textAlign: "center",
+            marginTop: "25px",
+          }}
+        >
           Already have an account?{" "}
-          <Link to="/">Login</Link>
+          <Link
+            to="/"
+            style={{
+              color: "#2563eb",
+              fontWeight: "bold",
+            }}
+          >
+            Login
+          </Link>
         </p>
-
       </div>
     </div>
   );
 }
 
 const container = {
-  height: "100vh",
+  minHeight: "100vh",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  background: "#f5f7fb",
+  background:
+    "linear-gradient(135deg,#eff6ff,#dbeafe)",
+  padding: "20px",
 };
 
 const card = {
-  width: "420px",
-  background: "white",
+  width: "100%",
+  maxWidth: "430px",
+  background: "#fff",
   padding: "35px",
-  borderRadius: "12px",
-  boxShadow: "0 0 15px rgba(0,0,0,0.15)",
+  borderRadius: "18px",
+  boxShadow: "0 10px 30px rgba(0,0,0,0.12)",
 };
 
 const input = {
   width: "100%",
-  padding: "12px",
-  marginTop: "15px",
-  borderRadius: "8px",
+  padding: "14px",
+  marginTop: "18px",
+  borderRadius: "10px",
   border: "1px solid #ccc",
   fontSize: "16px",
   boxSizing: "border-box",
 };
 
+const eye = {
+  position: "absolute",
+  right: "15px",
+  top: "33px",
+  cursor: "pointer",
+  color: "#555",
+};
+
 const button = {
   width: "100%",
-  padding: "12px",
-  marginTop: "20px",
+  padding: "14px",
+  marginTop: "25px",
   background: "#2563eb",
-  color: "white",
+  color: "#fff",
   border: "none",
-  borderRadius: "8px",
+  borderRadius: "10px",
   cursor: "pointer",
-  fontSize: "16px",
+  fontSize: "17px",
   fontWeight: "bold",
 };
