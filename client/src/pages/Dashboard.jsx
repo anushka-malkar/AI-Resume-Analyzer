@@ -118,7 +118,15 @@ const fetchHistory = async () => {
 
         </div>
 
-        <ResumeUpload setAnalysis={setAnalysis} />
+        <ResumeUpload
+  setAnalysis={(data) => {
+    setAnalysis(data);
+
+    fetchStats();
+
+    fetchHistory();
+  }}
+/>
         <StatsCards stats={stats} />
         <ATSChart history={history} />
 
